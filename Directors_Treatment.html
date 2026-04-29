@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mmaah Photoshooting 2026 — Directors Treatment">
+  <title>Mmaah · Directors Treatment · 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CUSTOM PROPERTIES
+    ============================================ */
+    :root {
+      --accent:       #C8392B;
+      --accent-light: #E84D3D;
+      --accent-pale:  #FAEAE8;
+
+      --white:        #FFFFFF;
+      --off-white:    #FAFAF8;
+      --warm-50:      #F7F5F2;
+      --warm-100:     #EDE9E4;
+      --warm-200:     #D9D3CB;
+
+      --gray-400:     #9B9188;
+      --gray-600:     #6B6259;
+      --gray-800:     #3D3530;
+      --gray-950:     #1A1512;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      --section-y:    clamp(5rem, 11vw, 10rem);
+      --section-x:    clamp(1.25rem, 5vw, 6rem);
+      --max-w:        1280px;
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; font-size: 16px; }
+    body  {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--gray-950);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.is-loading { overflow: hidden; }
+    img    { display: block; max-width: 100%; height: auto; }
+    a      { color: inherit; text-decoration: none; }
+    button { cursor: pointer; }
+
+    /* ============================================
+       TYPOGRAPHY
+    ============================================ */
+    .label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .headline-xl {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4.5vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+    }
+    .headline-lg {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.8vw, 2.6rem);
+      line-height: 1.15;
+    }
+    .headline-md {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+      line-height: 1.25;
+    }
+    .body-text {
+      font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+      line-height: 1.75;
+      color: var(--gray-600);
+    }
+
+    /* ============================================
+       LAYOUT
+    ============================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--section-x);
+    }
+
+    /* ============================================
+       PROGRESS BAR
+    ============================================ */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--accent);
+      transform-origin: left center;
+      transform: scaleX(0);
+      z-index: 1000;
+    }
+
+    /* ============================================
+       HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .site-header.is-scrolled {
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--warm-200);
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 1.4rem;
+    }
+    .header__brand {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .header__nav { display: flex; gap: 2.5rem; }
+    .header__nav a {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .header__nav a:hover { color: var(--accent); }
+
+    /* ============================================
+       01 — HERO
+    ============================================ */
+    .section-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding-block: 10rem 6rem;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .section-hero .container { position: relative; z-index: 2; }
+    .hero__eyebrow {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+    .hero__headline {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(4rem, 10.5vw, 10rem);
+      line-height: 0.93;
+      letter-spacing: -0.03em;
+      margin-bottom: 3rem;
+      max-width: 12ch;
+    }
+    .hero__headline .line-normal { display: block; }
+    .hero__headline .line-accent {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+    .hero__sub {
+      max-width: 42ch;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.75;
+      color: var(--gray-600);
+      margin-bottom: 4.5rem;
+    }
+    .hero__scroll-cue {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--gray-400);
+    }
+    .scroll-cue__line {
+      width: 48px;
+      height: 1px;
+      background: var(--warm-200);
+      display: block;
+    }
+    .scroll-cue__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .hero__bg-char {
+      position: absolute;
+      right: -0.04em;
+      bottom: -0.12em;
+      font-family: var(--font-display);
+      font-size: clamp(220px, 42vw, 650px);
+      font-weight: 900;
+      color: var(--accent-pale);
+      opacity: 0.65;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      line-height: 1;
+    }
+    @keyframes scrollHint {
+      0%, 100% { opacity: 1;   transform: translateY(0); }
+      50%       { opacity: 0.4; transform: translateY(7px); }
+    }
+    .hero__scroll-cue { animation: scrollHint 2.5s ease-in-out infinite; }
+
+    /* ============================================
+       02 — VISION
+    ============================================ */
+    .section-vision {
+      padding-block: var(--section-y);
+      background: var(--off-white);
+    }
+    .vision__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .vision__text-col .headline-xl { margin-bottom: 1.5rem; }
+    .vision__text-col .body-text   { margin-bottom: 1.25rem; }
+    .vision__image-wrap {
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .vision__image-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .vision__image-wrap:hover img { transform: scale(1.03); }
+    .vision__statement {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.8vw, 2.3rem);
+      line-height: 1.35;
+      color: var(--gray-950);
+      border-left: 3px solid var(--accent);
+      padding-left: 2rem;
+      max-width: 58ch;
+    }
+
+    /* ============================================
+       03 — LIGHTING
+    ============================================ */
+    .section-lighting {
+      padding-block: var(--section-y);
+      background: var(--warm-50);
+    }
+    .lighting__header { margin-bottom: 3.5rem; }
+    .lighting__header .headline-xl { margin-top: 0.5rem; }
+    .lighting__trio {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      margin-bottom: 4rem;
+    }
+    .lighting__card {
+      background: var(--white);
+      padding: clamp(2rem, 3.5vw, 3rem);
+    }
+    .card__number {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--warm-100);
+      margin-bottom: 1.5rem;
+    }
+    .card__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      margin-bottom: 0.8rem;
+    }
+    .card__body {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+    .lighting__principle {
+      background: var(--gray-950);
+      padding: clamp(2.5rem, 6vw, 5rem);
+    }
+    .lighting__principle .headline-lg { color: var(--accent-light); margin-bottom: 1rem; }
+    .lighting__principle .body-text   { color: rgba(255,255,255,0.65); max-width: 62ch; }
+
+    /* ============================================
+       04 — CLOSE-UPS
+    ============================================ */
+    .section-closeups {
+      padding-block: var(--section-y);
+      background: var(--white);
+    }
+    .closeups__intro { margin-bottom: 3.5rem; }
+    .closeups__intro .headline-xl { margin-top: 0.5rem; }
+
+    .closeups__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    .closeup-item {
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .closeup-item img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .closeup-item:hover img { transform: scale(1.06); }
+    .closeups__caption {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.45rem);
+      color: var(--gray-400);
+      text-align: center;
+    }
+
+    /* ============================================
+       05 — HERO SHOTS (DARK)
+    ============================================ */
+    .section-hero-shots {
+      padding-block: var(--section-y);
+      background: var(--gray-950);
+      color: var(--white);
+    }
+    .hero-shots__header { margin-bottom: 5rem; }
+    .hero-shots__header .label       { color: var(--accent-light); }
+    .hero-shots__header .headline-xl { color: var(--white); }
+
+    .showcase-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 6rem;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .showcase-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .showcase-item__img-wrap { overflow: hidden; border-radius: 2px; }
+    .showcase-item__img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .showcase-item__img-wrap:hover img { transform: scale(1.04); }
+    .showcase-item__info .headline-md { color: var(--white); margin-bottom: 1rem; }
+    .showcase-item__info .body-text   { color: rgba(255,255,255,0.55); margin-bottom: 1.75rem; }
+    .shot-specs {
+      list-style: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+    }
+    .shot-specs li {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.38);
+      padding-block: 0.45rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      letter-spacing: 0.03em;
+    }
+    .shot-specs li strong { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+    /* ============================================
+       06 — TABLE EXPERIENCE
+    ============================================ */
+    .section-table {
+      padding-block: var(--section-y);
+      background: var(--off-white);
+    }
+    .table__header { margin-bottom: 3.5rem; max-width: 60ch; }
+    .table__header .headline-xl { margin-block: 0.5rem 1.25rem; }
+    .table__hero-wrap { overflow: hidden; border-radius: 2px; margin-bottom: 1rem; }
+    .table__hero-img {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+    }
+    .table__trio {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+    }
+    .table__trio-item { overflow: hidden; border-radius: 2px; }
+    .table__trio-item img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .table__trio-item:hover img { transform: scale(1.04); }
+    .table__details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .table__detail { padding-top: 1.5rem; border-top: 1px solid var(--warm-200); }
+    .detail__label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+    .table__detail p { font-size: 0.92rem; line-height: 1.65; color: var(--gray-600); }
+
+    /* ============================================
+       07 — LIFESTYLE / ON LOCATION
+    ============================================ */
+    .section-lifestyle { overflow: hidden; }
+
+    .lifestyle__header {
+      padding-block: clamp(3rem, 6vw, 5rem);
+      padding-inline: var(--section-x);
+    }
+    .lifestyle__header .headline-xl { margin-top: 0.5rem; margin-bottom: 1rem; }
+
+    .lifestyle__duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .lifestyle__item { overflow: hidden; position: relative; }
+    .lifestyle__item img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .lifestyle__item:hover img { transform: scale(1.03); }
+
+    /* ============================================
+       08 — SHOT GUIDE
+    ============================================ */
+    .section-categories {
+      padding-block: var(--section-y);
+      background: var(--warm-50);
+    }
+    .categories__header { margin-bottom: 3.5rem; }
+    .categories__header .headline-xl { margin-top: 0.5rem; }
+    .categories__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .category-card { background: var(--white); overflow: hidden; border-radius: 2px; }
+    .category-card__visual { position: relative; overflow: hidden; }
+    .category-card__visual img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transition: transform 0.65s ease;
+    }
+    .category-card:hover .category-card__visual img { transform: scale(1.06); }
+    .category-card__badge {
+      position: absolute;
+      top: 0.9rem; right: 0.9rem;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      color: white;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .category-card__info { padding: 1.5rem; }
+    .category-card__info h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+    .category-card__info p {
+      font-size: 0.83rem;
+      color: var(--gray-600);
+      line-height: 1.55;
+      margin-bottom: 0.9rem;
+    }
+    .category-card__usage {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ============================================
+       09 — FOOD CATEGORIES
+    ============================================ */
+    .section-food-cats {
+      padding-block: var(--section-y);
+      background: var(--white);
+    }
+    .food-cats__header .headline-xl { margin-top: 0.5rem; margin-bottom: 2.5rem; }
+    .food-cats__tabs {
+      display: flex;
+      border-bottom: 1px solid var(--warm-200);
+      margin-bottom: 3rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .food-cats__tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      padding: 0.9rem 1.8rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .tab:hover    { color: var(--gray-950); }
+    .tab.is-active { color: var(--accent); border-bottom-color: var(--accent); }
+    .food-panel           { display: none; }
+    .food-panel.is-active { display: block; }
+    .food-panel__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .food-item { display: flex; flex-direction: column; gap: 0.65rem; }
+    .food-item__img-wrap { overflow: hidden; border-radius: 2px; }
+    .food-item__img-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+    .food-item:hover .food-item__img-wrap img { transform: scale(1.05); }
+    .food-item__name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--gray-950);
+    }
+    .food-item__base {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .food-item__tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================
+       10 — OUTPUT & FORMATE
+    ============================================ */
+    .section-output {
+      padding-block: var(--section-y);
+      background: var(--warm-50);
+    }
+    .output__header { margin-bottom: 3.5rem; }
+    .output__header .headline-xl { margin-top: 0.5rem; }
+    .output__list {
+      border-top: 1px solid var(--warm-200);
+      margin-bottom: 4rem;
+    }
+    .output-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+      padding-block: 1.4rem;
+      border-bottom: 1px solid var(--warm-200);
+      align-items: center;
+    }
+    .output-item__platform {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+    }
+    .output-item__spec   { font-size: 0.83rem; color: var(--gray-400); }
+    .output-item__ratio  { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; }
+    .output-item__type   { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray-400); }
+    .output__workflow {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      line-height: 1.55;
+      color: var(--gray-600);
+      max-width: 65ch;
+      padding-left: 2rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ============================================
+       11 — FEATURE IMAGE
+    ============================================ */
+    .section-feature { overflow: hidden; }
+    .feature__wrap { position: relative; }
+    .feature__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .feature__overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(to top, rgba(26,21,18,0.75) 0%, transparent 100%);
+    }
+    .feature__overlay-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+      color: rgba(255,255,255,0.9);
+      max-width: 50ch;
+    }
+
+    /* ============================================
+       12 — OUTRO
+    ============================================ */
+    .section-outro {
+      position: relative;
+      background: var(--gray-950);
+      padding-block: var(--section-y);
+      overflow: hidden;
+    }
+    .outro__inner { position: relative; z-index: 2; }
+    .outro__line {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 7.5vw, 7.5rem);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      display: block;
+    }
+    .outro__line.is-accent { color: var(--accent); font-style: italic; }
+    .outro__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.09);
+    }
+    .outro__meta span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .outro__bg-char {
+      position: absolute;
+      right: -0.04em;
+      bottom: -0.12em;
+      font-family: var(--font-display);
+      font-size: clamp(200px, 36vw, 520px);
+      font-weight: 900;
+      color: rgba(200,57,43,0.07);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (min-width: 768px) {
+      .lighting__trio       { grid-template-columns: repeat(3, 1fr); }
+      .table__details-grid  { grid-template-columns: repeat(3, 1fr); }
+      .food-panel__grid     { grid-template-columns: repeat(3, 1fr); }
+      .output-item          { grid-template-columns: 2fr 2fr 1fr 1fr; }
+      .showcase-item        { grid-template-columns: 1fr 1fr; gap: 5rem; }
+      .showcase-item:nth-child(even)    { direction: rtl; }
+      .showcase-item:nth-child(even) > * { direction: ltr; }
+    }
+    @media (min-width: 1024px) {
+      .vision__grid     { grid-template-columns: 1fr 1fr; gap: 7rem; }
+      .categories__grid { grid-template-columns: repeat(4, 1fr); }
+      .food-panel__grid { grid-template-columns: repeat(4, 1fr); }
+
+      /* Close-Ups — tall first item */
+      .closeups__grid {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-auto-flow: dense;
+      }
+      .closeup-item--tall { grid-row: span 2; }
+      .closeup-item--tall img {
+        aspect-ratio: auto;
+        height: 100%;
+        min-height: 460px;
+      }
+    }
+    @media (max-width: 580px) {
+      .header__nav { display: none; }
+      .table__trio { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       SHORTLIST — Food Stylisten Tabelle
+    ============================================ */
+    .section-shortlist {
+      padding-block: var(--section-y);
+      background: var(--gray-950);
+    }
+    .section-shortlist .label { color: rgba(200,57,43,0.85); }
+    .shortlist__headline { color: var(--off-white); }
+    .shortlist__intro {
+      color: rgba(250,250,248,0.45);
+      max-width: 52ch;
+      margin-top: 0.5rem;
+    }
+
+    /* TOP 5 CARDS */
+    .shortlist__top5-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+    }
+    .shortlist__top5-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .shortlist__top5-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .shortlist__top5 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 768px) {
+      .shortlist__top5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .shortlist__top5 { grid-template-columns: repeat(5, 1fr); }
+    }
+    .top5-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .top5-card:hover {
+      background: rgba(200,57,43,0.1);
+      border-color: rgba(200,57,43,0.35);
+    }
+    .top5-card__rank {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.7;
+    }
+    .top5-card__name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--off-white);
+      line-height: 1.3;
+    }
+    .top5-card__city {
+      font-size: 0.7rem;
+      color: rgba(250,250,248,0.35);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+    .top5-card__why {
+      font-size: 0.78rem;
+      color: rgba(250,250,248,0.55);
+      line-height: 1.55;
+      flex: 1;
+    }
+    .top5-card__fit {
+      font-size: 0.8rem;
+      color: #F4C44A;
+      letter-spacing: 0.05em;
+    }
+    .top5-card__rate {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(250,250,248,0.4);
+    }
+    .top5-card__link {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.8;
+      word-break: break-all;
+    }
+    .top5-card__link:hover { opacity: 1; }
+
+    /* FULL TABLE */
+    .shortlist__table-section-label {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .shortlist__table-section-label span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,0.3);
+      white-space: nowrap;
+    }
+    .shortlist__table-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .shortlist__table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 3rem;
+    }
+    .shortlist__table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+    .shortlist__table thead tr {
+      background: rgba(200,57,43,0.15);
+    }
+    .shortlist__table thead th {
+      padding: 0.85rem 1rem;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: left;
+      border-bottom: 1px solid rgba(200,57,43,0.25);
+      white-space: nowrap;
+    }
+    .shortlist__table thead th:first-child { text-align: center; width: 42px; }
+    .shortlist__table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.18s ease;
+    }
+    .shortlist__table tbody tr:hover { background: rgba(255,255,255,0.04); }
+    .shortlist__table td {
+      padding: 0.9rem 1rem;
+      font-size: 0.82rem;
+      color: rgba(250,250,248,0.65);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .shortlist__table td:first-child {
+      text-align: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1rem;
+      color: rgba(200,57,43,0.5);
+    }
+    .td-name {
+      color: var(--off-white);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .td-name small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.72rem;
+      color: rgba(250,250,248,0.35);
+      margin-top: 0.15rem;
+    }
+    .td-rate {
+      font-weight: 700;
+      color: rgba(250,250,248,0.75);
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+    .td-fit {
+      color: #F4C44A;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .td-link {
+      color: var(--accent);
+      font-size: 0.75rem;
+      opacity: 0.8;
+      display: block;
+      word-break: break-all;
+    }
+    .td-link:hover { opacity: 1; }
+    .tier-sep-row td {
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.03);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,0.2);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .tier-1-accent td:first-child { color: #F4C44A; }
+    .tier-badge {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .tier-badge--1 { background: rgba(212,160,23,0.18); color: #D4A017; }
+    .tier-badge--2 { background: rgba(200,57,43,0.12); color: rgba(200,57,43,0.8); }
+    .tier-badge--3 { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); }
+    .shortlist__note {
+      font-size: 0.7rem;
+      color: rgba(250,250,248,0.2);
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      letter-spacing: 0.06em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============================================
+       HEADER LOGO
+    ============================================ */
+    .header__logo {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    /* ============================================
+       BISHERIGE BILDSPRACHE (Brand Fotos)
+    ============================================ */
+    .section-brand-fotos {
+      padding-block: var(--section-y);
+      background: var(--gray-950);
+      overflow: hidden;
+    }
+    .section-brand-fotos .label { color: rgba(200,57,43,0.9); }
+    .brand-fotos__header {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (min-width: 768px) {
+      .brand-fotos__header {
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+      }
+    }
+    .brand-fotos__headline { color: var(--off-white); }
+    .brand-fotos__desc { color: rgba(250,250,248,0.45); max-width: 40ch; }
+    .brand-fotos__grid {
+      display: grid;
+      gap: 0.6rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 768px) {
+      .brand-fotos__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .brand-foto-item {
+      overflow: hidden;
+      background: #111;
+    }
+    .brand-foto-item img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+    .brand-foto-item:hover img { transform: scale(1.04); }
+    .brand-foto-item--wide { grid-column: span 2; }
+    .brand-foto-item--wide img { aspect-ratio: 16/9; }
+    @media (min-width: 768px) {
+      .brand-foto-item--wide { grid-column: span 1; }
+      .brand-foto-item--wide img { aspect-ratio: 1/1; }
+    }
+    .brand-fotos__note {
+      margin-top: 2.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,0.18);
+      text-align: center;
+    }
+
+    /* ============================================
+       FOOD STYLISTIN GESUCHT
+    ============================================ */
+    .section-stylist {
+      padding-block: var(--section-y);
+      background: var(--warm-50);
+    }
+    .stylist__inner { max-width: 920px; }
+    .stylist__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--accent);
+      color: white;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.4rem;
+    }
+    .stylist__tag::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.65);
+    }
+    .stylist__headline {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      color: var(--gray-950);
+      margin-bottom: 0.6rem;
+    }
+    .stylist__headline em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .stylist__top {
+      display: grid;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--warm-200);
+      margin-bottom: 0;
+    }
+    @media (min-width: 768px) {
+      .stylist__top { grid-template-columns: 1fr auto; align-items: end; }
+    }
+    .stylist__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .stylist__meta-row {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .stylist__meta-row strong {
+      color: var(--gray-950);
+      font-weight: 600;
+    }
+    .stylist__meta-row::before {
+      content: '—';
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .stylist__blocks { display: grid; gap: 0; }
+    .stylist__block {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--warm-200);
+      display: grid;
+      gap: 1.2rem;
+    }
+    @media (min-width: 768px) {
+      .stylist__block { grid-template-columns: 200px 1fr; gap: 4rem; }
+    }
+    .stylist__block-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 0.2rem;
+    }
+    .stylist__block-body { display: flex; flex-direction: column; gap: 0.5rem; }
+    .stylist__block-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      color: var(--gray-950);
+      margin-bottom: 0.5rem;
+    }
+    .stylist__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .stylist__list li {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .stylist__list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.78rem;
+    }
+    .stylist__aesthetic {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+    .stylist__pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.9rem;
+      border: 1.5px solid var(--warm-200);
+      color: var(--gray-800);
+    }
+    .stylist__cta-block {
+      padding-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .stylist__cta-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+      color: var(--gray-950);
+    }
+    .stylist__cta-email {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+    }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="progress-bar js-progress"></div>
+
+  <header class="site-header js-header">
+    <div class="header__inner container">
+      <div class="header__brand">
+        <img src="09_Logo/Logo%20Mmaah.png" alt="Mmaah" class="header__logo">
+      </div>
+      <nav class="header__nav">
+        <a href="#vision">Vision</a>
+        <a href="#lighting">Stil</a>
+        <a href="#shots">Shots</a>
+        <a href="#output">Output</a>
+        <a href="#stylist">Stylistin</a>
+        <a href="#shortlist">Shortlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================
+         01 · HERO
+    =========================================== -->
+    <section class="section-hero" id="hero">
+      <div class="hero__bg-char" aria-hidden="true">맛</div>
+      <div class="container">
+        <span class="hero__eyebrow">Directors Treatment · Photoshooting 2026</span>
+        <h1 class="hero__headline">
+          <span class="line-normal js-hero-line">Eat</span>
+          <span class="line-normal js-hero-line">with</span>
+          <span class="line-accent js-hero-line">your eyes.</span>
+        </h1>
+        <p class="hero__sub js-hero-sub">
+          Korean Food. Berlin. Ein Shooting, das Appetit macht —
+          bevor der erste Bissen auf den Tisch kommt.
+        </p>
+        <div class="hero__scroll-cue js-hero-cue">
+          <span class="scroll-cue__line"></span>
+          <span class="scroll-cue__label">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         02 · VISION
+    =========================================== -->
+    <section class="section-vision" id="vision">
+      <div class="container">
+        <div class="vision__grid">
+          <div class="vision__text-col">
+            <span class="label">01 — Die Idee</span>
+            <h2 class="headline-xl">Abundance. Farbe. Appetit.</h2>
+            <p class="body-text">
+              Wir fotografieren kein Essen. Wir fotografieren ein Versprechen.
+              Jedes Bild soll eine direkte, körperliche Reaktion auslösen.
+              Hunger. Lust. Den Reflex, jetzt zu bestellen.
+            </p>
+            <p class="body-text">
+              Das Shooting ist kein Produktkatalog. Es ist eine Inszenierung.
+              Jedes Setup erzählt, wie Mmaah sich anfühlt — bevor
+              man es probiert hat.
+            </p>
+          </div>
+          <div class="vision__image-wrap">
+            <!-- Foodshots/image10 — Pink bg full spread, brand-forward -->
+            <img
+              class="js-parallax-img"
+              src="03_Moodboard/Foodshots/image10.jpg"
+              alt="Food Spread Vision"
+              loading="lazy">
+          </div>
+        </div>
+        <blockquote class="vision__statement js-fade-up">
+          "Jedes Bild muss nach dem nächsten Bissen schmecken."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         02b · BISHERIGE BILDSPRACHE
+         6 bestehende Mmaah-Marketingfotos als Ausgangspunkt.
+    =========================================== -->
+    <section class="section-brand-fotos" id="ausgangslage">
+      <div class="container">
+        <div class="brand-fotos__header">
+          <div>
+            <span class="label">02 — Die Ausgangslage</span>
+            <h2 class="headline-xl brand-fotos__headline">Wo wir stehen.<br>Was wir wollen.</h2>
+          </div>
+          <p class="body-text brand-fotos__desc">
+            Das ist unser bisheriges Bildmaterial. Es zeigt das Potenzial der Marke.
+            Das neue Shooting hebt es auf ein anderes Niveau. Mehr Tiefe,
+            mehr Inszenierung, mehr Appetit.
+          </p>
+        </div>
+
+        <div class="brand-fotos__grid">
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/1.jpg"
+                 alt="Mmaah Bowl — Korean BBQ" loading="lazy">
+          </div>
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/Bites%20Bucket%20Fallen.jpg"
+                 alt="The Bucket — Bites" loading="lazy">
+          </div>
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/Hand%20holding%20CHicken%20Bites%20with%20cheese%20sauce.jpg"
+                 alt="Hand holding crispy chicken with cheese" loading="lazy">
+          </div>
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/I_like_gotchu_Extreme_close-up_of_crispy_golden_french_fries_du_d6e6aa2d-026c-4e24-81ce-112e197ca787.jpg"
+                 alt="Fries Extreme Close-Up" loading="lazy">
+          </div>
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/I_like_gotchu_Top-down_flat_lay_of_crispy_golden_french_fries_s_4c3455fc-06fb-456c-8fc3-b18d772cd712.jpg"
+                 alt="Fries Top-Down Flat Lay" loading="lazy">
+          </div>
+          <div class="brand-foto-item js-brand-foto">
+            <img src="08_Mmaah%20Fotos/Special%20BBQ%20with%20drink%20menu%20hands%20with%20chopstick%20and%20kimchi%20side.jpeg"
+                 alt="Special BBQ — Hands with Chopstick" loading="lazy">
+          </div>
+        </div>
+
+        <p class="brand-fotos__note">
+          Bestehende Mmaah Marketingfotos · Intern · Stand 2026
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         03 · LIGHTING & STIL
+    =========================================== -->
+    <section class="section-lighting" id="lighting">
+      <div class="container">
+        <div class="lighting__header">
+          <span class="label">02 — Lichtführung & Stil</span>
+          <h2 class="headline-xl">Drei Lichter. Eine Wahrheit.</h2>
+        </div>
+        <div class="lighting__trio">
+          <div class="lighting__card js-card">
+            <div class="card__number">01</div>
+            <h3 class="card__title">Key Light</h3>
+            <p class="card__body">
+              Hauptlichtquelle. 45° von links oben. Erzeugt Tiefe,
+              definiert Textur. Weiches Licht durch Diffusor —
+              natürlich, warm, appetitlich.
+            </p>
+          </div>
+          <div class="lighting__card js-card">
+            <div class="card__number">02</div>
+            <h3 class="card__title">Fill Light</h3>
+            <p class="card__body">
+              Aufheller von rechts. Weiche Reflexion, die harte
+              Schatten aufbricht. Das Essen bekommt Luft
+              von allen Seiten.
+            </p>
+          </div>
+          <div class="lighting__card js-card">
+            <div class="card__number">03</div>
+            <h3 class="card__title">Back Light</h3>
+            <p class="card__body">
+              Separation vom Hintergrund. Erzeugt den Glossy-Effekt
+              auf Soßen. Das Licht, das aus gutem Essen
+              echten Foodporn macht.
+            </p>
+          </div>
+        </div>
+        <div class="lighting__principle js-fade-up">
+          <h3 class="headline-lg">Mehr ist mehr.</h3>
+          <p class="body-text">
+            Soßen laufen. Portionen türmen sich. Sesam, Frühlingszwiebeln,
+            Chili — alles gleichzeitig, alles zu viel. Das Ergebnis muss
+            nicht eins zu eins dem servierten Gericht entsprechen.
+            Es muss Hunger machen. Das ist der einzige Maßstab.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         04 · CLOSE-UPS
+         All 8 images from 03_Moodboard/Close Ups/
+    =========================================== -->
+    <section class="section-closeups" id="closeups">
+      <div class="container">
+        <div class="closeups__intro">
+          <span class="label">03 — Das Detail</span>
+          <h2 class="headline-xl">Crunch. Textur. Wahrheit.</h2>
+        </div>
+        <div class="closeups__grid">
+          <!-- Tall first item -->
+          <figure class="closeup-item closeup-item--tall js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image3.jpg"
+              alt="Close-Up 1" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image4.jpg"
+              alt="Close-Up 2" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image5.jpg"
+              alt="Close-Up 3" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image8.jpg"
+              alt="Close-Up 4" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image13.jpg"
+              alt="Close-Up 5" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image14.jpg"
+              alt="Close-Up 6" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image15.jpg"
+              alt="Close-Up 7" loading="lazy">
+          </figure>
+          <figure class="closeup-item js-closeup">
+            <img src="03_Moodboard/Close%20Ups/image19.jpg"
+              alt="Close-Up 8" loading="lazy">
+          </figure>
+        </div>
+        <p class="closeups__caption">
+          Extreme Close-Up bedeutet: Der Betrachter riecht das Bild.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         05 · HERO SHOTS (DARK SECTION)
+         Foodshots: image2 (sauce pour), image4 (wings pile), image15 (loaded fries red)
+    =========================================== -->
+    <section class="section-hero-shots" id="shots">
+      <div class="container">
+        <div class="hero-shots__header">
+          <span class="label">04 — Signature Shots</span>
+          <h2 class="headline-xl">Die perfekte Inszenierung.</h2>
+        </div>
+
+        <!-- image2 — Sauce being poured over fried chicken + fries: action shot -->
+        <div class="showcase-item js-showcase">
+          <div class="showcase-item__img-wrap">
+            <img src="03_Moodboard/Foodshots/image2.jpg"
+              alt="Action Shot — Sauce Pour" loading="lazy">
+          </div>
+          <div class="showcase-item__info">
+            <h3 class="headline-md">Der Action-Shot.</h3>
+            <p class="body-text">
+              Soße wird live gegossen. Dieser Moment macht das Bild.
+              Mehrere Takes, wir fangen den perfekten Drizzle.
+              Das ist der Shot, der auf Lieferando konvertiert.
+            </p>
+            <ul class="shot-specs">
+              <li><strong>Typ:</strong> Action / Hero Shot</li>
+              <li><strong>Key-Element:</strong> Soßen-Pour in Bewegung</li>
+              <li><strong>Winkel:</strong> 45°, leicht schräg von oben</li>
+              <li><strong>Back Light:</strong> stark für Glanz-Effekt</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- image4 — Giant pile of saucy wings: Mehr ist mehr -->
+        <div class="showcase-item js-showcase">
+          <div class="showcase-item__img-wrap">
+            <img src="03_Moodboard/Foodshots/image4.jpg"
+              alt="Saucy Wings — Mehr ist mehr" loading="lazy">
+          </div>
+          <div class="showcase-item__info">
+            <h3 class="headline-md">Mehr ist mehr.</h3>
+            <p class="body-text">
+              Übertreiben ist Pflicht. Der Turm, der überfließt,
+              die Hand, die hält. Genau diese Energie brauchen
+              wir für unsere Signature Dishes.
+            </p>
+            <ul class="shot-specs">
+              <li><strong>Typ:</strong> Editorial / OOH</li>
+              <li><strong>Stil:</strong> Maximalistisch, Abundance</li>
+              <li><strong>Hintergrund:</strong> Clean, neutral/white</li>
+              <li><strong>Key-Element:</strong> Soße läuft über, Masse sichtbar</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- image15 — Loaded fries on red bg: bold platform shot -->
+        <div class="showcase-item js-showcase">
+          <div class="showcase-item__img-wrap">
+            <img src="03_Moodboard/Foodshots/image15.jpg"
+              alt="Loaded Fries — Bold Platform Shot" loading="lazy">
+          </div>
+          <div class="showcase-item__info">
+            <h3 class="headline-md">Bold Background.</h3>
+            <p class="body-text">
+              Starker Hintergrund hebt das Produkt. Dieser Look
+              funktioniert für Plattform-Assets, Social Media
+              und Print. Farbe und Kontrast als Stilmittel.
+            </p>
+            <ul class="shot-specs">
+              <li><strong>Typ:</strong> Platform Hero / Social</li>
+              <li><strong>Hintergrund:</strong> Starke Farbe (Rot, Terrakotta)</li>
+              <li><strong>Winkel:</strong> Leicht erhöht, 30–45°</li>
+              <li><strong>Key-Element:</strong> Soße auf Fries sichtbar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         06 · TABLE EXPERIENCE
+         Anordnung: image10 (wide), image1 + image7 + image16 (trio)
+    =========================================== -->
+    <section class="section-table" id="table">
+      <div class="container">
+        <div class="table__header">
+          <span class="label">05 — Der gedeckte Tisch</span>
+          <h2 class="headline-xl">Abundance ist die Message.</h2>
+          <p class="body-text">
+            Kein leerer Platz. Mehrere Gerichte, ein Frame, eine Geschichte.
+            Der Tisch soll so aussehen, als wäre gerade eine Gruppe
+            angekommen und hat alles bestellt.
+          </p>
+        </div>
+
+        <!-- Main wide: Anordnung/image10 — Ramen bowls overhead with chopsticks -->
+        <div class="table__hero-wrap">
+          <img class="table__hero-img js-parallax-img"
+            src="03_Moodboard/Anordnung/image10.jpg"
+            alt="Table Experience — Full Spread Overhead"
+            loading="lazy">
+        </div>
+
+        <!-- Trio: remaining 3 Anordnung images -->
+        <div class="table__trio">
+          <div class="table__trio-item js-fade-up">
+            <img src="03_Moodboard/Anordnung/image1.jpg"
+              alt="Anordnung Referenz — Styling" loading="lazy">
+          </div>
+          <div class="table__trio-item js-fade-up">
+            <img src="03_Moodboard/Anordnung/image7.jpg"
+              alt="Anordnung Referenz — Komposition" loading="lazy">
+          </div>
+          <div class="table__trio-item js-fade-up">
+            <img src="03_Moodboard/Anordnung/image16.jpg"
+              alt="Anordnung Referenz — Props" loading="lazy">
+          </div>
+        </div>
+
+        <div class="table__details-grid">
+          <div class="table__detail js-fade-up">
+            <span class="detail__label">Komposition</span>
+            <p>Goldener Schnitt. Das Hauptgericht auf dem Goldenen Schnitt
+            platziert. Nebendishes füllen den Rest organisch, ohne Symmetrie.</p>
+          </div>
+          <div class="table__detail js-fade-up">
+            <span class="detail__label">Props & Utensilien</span>
+            <p>Koreanisches Steinzeug, Bambusstäbchen, Keramik-Saucenschalen.
+            Naturmaterialien. Keine plastikartigen Oberflächen.</p>
+          </div>
+          <div class="table__detail js-fade-up">
+            <span class="detail__label">Farbwelt</span>
+            <p>Warme Töne. Terrakotta, gebrochenes Weiß, tiefes Dunkelgrün.
+            Das Essen soll herausstechen, nicht die Props.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         07 · LIFESTYLE / ON LOCATION
+         Lifestyle: image17 (two girls fries) + image18 (hoodie girl fries)
+    =========================================== -->
+    <section class="section-lifestyle" id="lifestyle">
+      <div class="container">
+        <div class="lifestyle__header">
+          <span class="label">06 — On Location</span>
+          <h2 class="headline-xl">Das Gefühl dahinter.</h2>
+          <p class="body-text" style="max-width:50ch">
+            Lifestyle-Shots zeigen, wer Mmaah isst und wie es sich anfühlt.
+            Echte Momente, echte Energie.
+          </p>
+        </div>
+      </div>
+      <!-- Full-bleed duo, no container -->
+      <div class="lifestyle__duo">
+        <!-- image17 — two girls holding loaded fries outdoors -->
+        <div class="lifestyle__item js-lifestyle-item">
+          <img src="03_Moodboard/Lifestyle/image17.jpg"
+            alt="Lifestyle — On Location" loading="lazy">
+        </div>
+        <!-- image18 — hoodie person holding fries tray -->
+        <div class="lifestyle__item js-lifestyle-item">
+          <img src="03_Moodboard/Lifestyle/image18.jpg"
+            alt="Lifestyle — Product Hold" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         08 · SHOT GUIDE
+         image8 (cheese pull), image9 (frites atelier), image9 2 (overhead sauces), image12 (spread red)
+    =========================================== -->
+    <section class="section-categories" id="guide">
+      <div class="container">
+        <div class="categories__header">
+          <span class="label">07 — Shot Guide</span>
+          <h2 class="headline-xl">Vier Perspektiven. Ein System.</h2>
+        </div>
+        <div class="categories__grid">
+
+          <!-- image8 — cheese pull nachos: close-up drama -->
+          <div class="category-card js-cat-card">
+            <div class="category-card__visual">
+              <img src="03_Moodboard/Foodshots/image8.jpg"
+                alt="Close-Up Shot" loading="lazy">
+              <div class="category-card__badge">Macro</div>
+            </div>
+            <div class="category-card__info">
+              <h3>Close-Up</h3>
+              <p>Extreme Nahaufnahme. Textur, Glanz, Drama.
+              Kein Kontext. Nur das Material.</p>
+              <span class="category-card__usage">Social · Stories · Thumbnails</span>
+            </div>
+          </div>
+
+          <!-- image9 — Frites Atelier fries on table: elegant hero -->
+          <div class="category-card js-cat-card">
+            <div class="category-card__visual">
+              <img src="03_Moodboard/Foodshots/image9.jpg"
+                alt="Hero Shot 45°" loading="lazy">
+              <div class="category-card__badge">45°</div>
+            </div>
+            <div class="category-card__info">
+              <h3>Hero Shot</h3>
+              <p>45° Winkel. Zeigt Aufbau und Tiefe des Gerichts.
+              Der klassische Food-Standard.</p>
+              <span class="category-card__usage">Lieferando · UberEats · Volt</span>
+            </div>
+          </div>
+
+          <!-- image9 2 — chicken + 6 sauces overhead on marble -->
+          <div class="category-card js-cat-card">
+            <div class="category-card__visual">
+              <img src="03_Moodboard/Foodshots/image9%202.jpg"
+                alt="Overhead 90°" loading="lazy">
+              <div class="category-card__badge">90°</div>
+            </div>
+            <div class="category-card__info">
+              <h3>Overhead</h3>
+              <p>Von direkt oben. Symmetrie und Komposition
+              im Vordergrund. Ideal für Bowls und Sets.</p>
+              <span class="category-card__usage">Website Hero · Banner · Print</span>
+            </div>
+          </div>
+
+          <!-- image12 — Chick-fil-a spread on red: full setup shot -->
+          <div class="category-card js-cat-card">
+            <div class="category-card__visual">
+              <img src="03_Moodboard/Foodshots/image12.jpg"
+                alt="Table Setup Shot" loading="lazy">
+              <div class="category-card__badge">Setup</div>
+            </div>
+            <div class="category-card__info">
+              <h3>Table Shot</h3>
+              <p>Mehrere Produkte, ein Frame. Lifestyle
+              und Abundance. Die große Erzählung.</p>
+              <span class="category-card__usage">Website · Presse · Poster</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         09 · FOOD CATEGORIES (TABS)
+    =========================================== -->
+    <section class="section-food-cats" id="menu">
+      <div class="container">
+        <div class="food-cats__header">
+          <span class="label">08 — Das Sortiment</span>
+          <h2 class="headline-xl">Was wir fotografieren.</h2>
+        </div>
+
+        <div class="food-cats__tabs" role="tablist">
+          <button class="tab js-tab is-active" data-tab="mains"  role="tab">Main Dishes</button>
+          <button class="tab js-tab"           data-tab="sides"  role="tab">Sides &amp; Shares</button>
+          <button class="tab js-tab"           data-tab="drinks" role="tab">Drinks &amp; Dessert</button>
+        </div>
+
+        <!-- MAINS
+             image6  (colorful hotdogs overhead)
+             image11 (3 hotdogs on board)
+             image7  (Popeyes orange bg meal)
+             image12 2 (saucy chicken editorial blue)
+        -->
+        <div class="food-panel is-active" id="panel-mains">
+          <div class="food-panel__grid">
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image6.jpg"
+                  alt="Main Dish 1" loading="lazy">
+              </div>
+              <span class="food-item__name">Signature Bowl</span>
+              <span class="food-item__base">Rice Base + Toppings</span>
+              <span class="food-item__tag">Signature ★</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image11.jpg"
+                  alt="Main Dish 2" loading="lazy">
+              </div>
+              <span class="food-item__name">Loaded Tray</span>
+              <span class="food-item__base">Paper Tray Concept</span>
+              <span class="food-item__tag">Signature ★</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image7.jpg"
+                  alt="Main Dish 3" loading="lazy">
+              </div>
+              <span class="food-item__name">Chicken Combo</span>
+              <span class="food-item__base">KFC + Sides</span>
+              <span class="food-item__tag">Bestseller ↑</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image12%202.jpg"
+                  alt="Main Dish 4" loading="lazy">
+              </div>
+              <span class="food-item__name">Editorial Shot</span>
+              <span class="food-item__base">OOH / Campaign</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDES
+             image4 copy (Mandu on orange with chopsticks — perfect!)
+             image17     (Korean wings + sesame + sauce on tray)
+             image1      (Döner + fries + Coke combo)
+        -->
+        <div class="food-panel" id="panel-sides">
+          <div class="food-panel__grid">
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image4%20copy.jpg"
+                  alt="Mandu Dumplings" loading="lazy">
+              </div>
+              <span class="food-item__name">Mandu Dumplings</span>
+              <span class="food-item__base">Share Dish</span>
+              <span class="food-item__tag">Signature ★</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image17.jpg"
+                  alt="Korean Wings" loading="lazy">
+              </div>
+              <span class="food-item__name">Korean Fried Wings</span>
+              <span class="food-item__base">Sesam + Gochujang Sauce</span>
+              <span class="food-item__tag">Bestseller ↑</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image1.jpg"
+                  alt="Combo Side" loading="lazy">
+              </div>
+              <span class="food-item__name">Combo Side</span>
+              <span class="food-item__base">Fries + Drink</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DRINKS & DESSERT
+             image5       (multiple street food / drinks overhead)
+             Lifestyle/image6 (KFC girl with iced latte — lifestyle drinks)
+        -->
+        <div class="food-panel" id="panel-drinks">
+          <div class="food-panel__grid">
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Foodshots/image5.jpg"
+                  alt="Drinks Setup" loading="lazy">
+              </div>
+              <span class="food-item__name">Drinks Setup</span>
+              <span class="food-item__base">Alko &amp; Non-Alko</span>
+            </div>
+            <div class="food-item">
+              <div class="food-item__img-wrap">
+                <img src="03_Moodboard/Lifestyle/image6.jpg"
+                  alt="Lifestyle Drink" loading="lazy">
+              </div>
+              <span class="food-item__name">Lifestyle Drink</span>
+              <span class="food-item__base">On Location / Campaign</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10 · OUTPUT & FORMATE
+    =========================================== -->
+    <section class="section-output" id="output">
+      <div class="container">
+        <div class="output__header">
+          <span class="label">09 — Deliverables</span>
+          <h2 class="headline-xl">Jedes Bild. Jedes Format.</h2>
+        </div>
+        <div class="output__list">
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Lieferando</div>
+            <div class="output-item__spec">Banner + Hero + Produktfotos</div>
+            <div class="output-item__ratio">4:3 / 16:9</div>
+            <div class="output-item__type">Plattform</div>
+          </div>
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Uber Eats</div>
+            <div class="output-item__spec">Restaurant Cover + Item Photos</div>
+            <div class="output-item__ratio">16:9 / 1:1</div>
+            <div class="output-item__type">Plattform</div>
+          </div>
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Volt</div>
+            <div class="output-item__spec">Banner + Produktdarstellung</div>
+            <div class="output-item__ratio">Format TBD</div>
+            <div class="output-item__type">Plattform</div>
+          </div>
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Website</div>
+            <div class="output-item__spec">Hero 2560×1080px · Content Sections</div>
+            <div class="output-item__ratio">21:9</div>
+            <div class="output-item__type">Web</div>
+          </div>
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Pressebilder</div>
+            <div class="output-item__spec">300 dpi · Druckfertig · Mehrere Formate</div>
+            <div class="output-item__ratio">3:2 / 1:1</div>
+            <div class="output-item__type">Print / PR</div>
+          </div>
+          <div class="output-item js-output-item">
+            <div class="output-item__platform">Poster</div>
+            <div class="output-item__spec">A2 · Luft für Typografie · High-Res</div>
+            <div class="output-item__ratio">A2 / A3</div>
+            <div class="output-item__type">Print</div>
+          </div>
+        </div>
+        <p class="output__workflow js-fade-up">
+          Finaler Workflow: Klassisches Retuschieren, danach
+          KI-gestützte Post-Production für Color Grading,
+          Texturschärfung und Format-Skalierung aller Deliverables.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10b · FOOD STYLISTIN GESUCHT
+         Internes Briefing-Dokument für die Besetzung.
+    =========================================== -->
+    <section class="section-stylist" id="stylist">
+      <div class="container">
+        <div class="stylist__inner">
+
+          <div class="stylist__top js-fade-up">
+            <div>
+              <div class="stylist__tag">Wir suchen</div>
+              <h2 class="stylist__headline">
+                Food Stylistin<br>
+                für das <em>Shooting 2026.</em>
+              </h2>
+            </div>
+            <div class="stylist__meta">
+              <div class="stylist__meta-row"><strong>Location</strong> Berlin</div>
+              <div class="stylist__meta-row"><strong>Format</strong> 1 Shooting-Tag</div>
+              <div class="stylist__meta-row"><strong>Gerichte</strong> ca. 12–16 Setups</div>
+              <div class="stylist__meta-row"><strong>Datum</strong> TBD · Frühjahr / Sommer 2026</div>
+              <div class="stylist__meta-row"><strong>Bezahlung</strong> Fair, nach Vereinbarung</div>
+            </div>
+          </div>
+
+          <div class="stylist__blocks">
+
+            <div class="stylist__block js-fade-up">
+              <span class="stylist__block-label">Worum geht es</span>
+              <div class="stylist__block-body">
+                <h3 class="stylist__block-title">Das Projekt</h3>
+                <ul class="stylist__list">
+                  <li>High-End Food Shooting für Mmaah Korean Food, Berlin</li>
+                  <li>Bilder für Lieferplattformen, Website, Presse und Print</li>
+                  <li>Kein Menuboard. Kein Produktkatalog. Echte Inszenierung.</li>
+                  <li>Dreipunktbelichtung, klare visuelle Sprache, starke Gerichte</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stylist__block js-fade-up">
+              <span class="stylist__block-label">Dein Job</span>
+              <div class="stylist__block-body">
+                <h3 class="stylist__block-title">Was du am Set machst</h3>
+                <ul class="stylist__list">
+                  <li>Gerichte für die Kamera optimieren. Nicht für den Gast.</li>
+                  <li>Soßen großzügig portionieren, Garnierungen maximieren</li>
+                  <li>Füllmengen und Schichtung visuell auf Maximum bringen</li>
+                  <li>Kontinuität über mehrere Takes sicherstellen</li>
+                  <li>Backup-Teller, Doubles und Reserve-Elemente vorbereiten</li>
+                  <li>Enge Abstimmung mit Fotograf und Director am Set</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stylist__block js-fade-up">
+              <span class="stylist__block-label">Der Stil</span>
+              <div class="stylist__block-body">
+                <h3 class="stylist__block-title">Die Ästhetik, die wir wollen</h3>
+                <p class="body-text" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                  Bold. Farbenfroh. Satt. Kein Fine-Dining-Minimalismus.
+                  Kein steriles Weißbrett-Catering. Korean Fast Food auf High-End-Niveau.
+                  Das Prinzip: Mehr ist mehr.
+                </p>
+                <div class="stylist__aesthetic">
+                  <span class="stylist__pill">Bold Colors</span>
+                  <span class="stylist__pill">Maximum Portion</span>
+                  <span class="stylist__pill">Sauce Action</span>
+                  <span class="stylist__pill">Glanz &amp; Textur</span>
+                  <span class="stylist__pill">Schichtung</span>
+                  <span class="stylist__pill">Warmth</span>
+                  <span class="stylist__pill">Street Energy</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stylist__block js-fade-up">
+              <span class="stylist__block-label">Was du mitbringst</span>
+              <div class="stylist__block-body">
+                <h3 class="stylist__block-title">Skills &amp; Erfahrung</h3>
+                <ul class="stylist__list">
+                  <li>Erfahrung im professionellen Food Styling für Foto-Produktionen</li>
+                  <li>Portfolio mit vergleichbaren Projekten (Fast Food, Restaurant, FMCG)</li>
+                  <li>Sicherheit im Umgang mit heißem, fertigem Essen am Set</li>
+                  <li>Grundverständnis für Licht und wie Styling damit interagiert</li>
+                  <li>Flexibilität, Tempo und Präzision unter Zeitdruck</li>
+                  <li>Eigenes Styling-Kit mitbringen</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stylist__block js-fade-up">
+              <span class="stylist__block-label">Vorbereitung</span>
+              <div class="stylist__block-body">
+                <h3 class="stylist__block-title">Was du im Voraus bekommst</h3>
+                <ul class="stylist__list">
+                  <li>Vollständiges Directors Treatment (dieses Dokument)</li>
+                  <li>Moodboard mit 30+ Referenz-Shots</li>
+                  <li>Finale Shot-Liste mit allen Gerichten und Prioritäten</li>
+                  <li>Pre-Call mit Director mindestens 1 Woche vor dem Shooting</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="stylist__cta-block js-fade-up">
+            <p class="stylist__cta-text">Du bist dabei? Dann lass uns reden.</p>
+            <a href="mailto:naderlaouad@gmail.com" class="stylist__cta-email">
+              naderlaouad@gmail.com
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10c · SHORTLIST FOOD STYLISTEN
+         Top 5 Cards + vollständige Recherche-Tabelle
+    =========================================== -->
+    <section class="section-shortlist" id="shortlist">
+      <div class="container">
+        <span class="label">Recherche — Food Stylisten</span>
+        <h2 class="headline-xl shortlist__headline">21 Kandidaten.<br>Eine Entscheidung.</h2>
+        <p class="body-text shortlist__intro">
+          Recherchiert nach Mmaah-Ästhetik: Bold, Street Food, asiatisches Fast-Casual,
+          Delivery-Plattform-Erfahrung. Alle Preise sind Schätzwerte. Finale Konditionen auf Anfrage.
+        </p>
+
+        <!-- TOP 5 -->
+        <div class="shortlist__top5-header">
+          <span class="shortlist__top5-label">Top 5 Empfehlungen</span>
+          <div class="shortlist__top5-line"></div>
+        </div>
+
+        <div class="shortlist__top5">
+          <div class="top5-card js-top5-card">
+            <span class="top5-card__rank">01</span>
+            <p class="top5-card__name">Haniyeh Nikoo</p>
+            <p class="top5-card__city">Berlin</p>
+            <p class="top5-card__why">Persisch-asiatischer Background. Ehem. HelloFresh Senior Stylist. Versteht Korean Food Ästhetik intuitiv.</p>
+            <p class="top5-card__fit">★★★★★</p>
+            <p class="top5-card__rate">600 – 900 €/Tag</p>
+            <a href="https://haniyehnikoo.com" target="_blank" class="top5-card__link">haniyehnikoo.com</a>
+          </div>
+          <div class="top5-card js-top5-card">
+            <span class="top5-card__rank">02</span>
+            <p class="top5-card__name">Stefan Dangeleit</p>
+            <p class="top5-card__city">Berlin</p>
+            <p class="top5-card__why">McDonald's + Pizza Hut im Portfolio. Direkte Fast-Food-Werbeerfahrung. Leicht erreichbar per Mail.</p>
+            <p class="top5-card__fit">★★★★★</p>
+            <p class="top5-card__rate">700 – 1.000 €/Tag</p>
+            <a href="https://foodstylingdangeleit.com" target="_blank" class="top5-card__link">foodstylingdangeleit.com</a>
+          </div>
+          <div class="top5-card js-top5-card">
+            <span class="top5-card__rank">03</span>
+            <p class="top5-card__name">Katja Baum</p>
+            <p class="top5-card__city">Hamburg (reist)</p>
+            <p class="top5-card__why">Yuzu Sushi + Eat Happy direkt im Portfolio. Näher an Mmaah als fast alle Berliner Kandidaten.</p>
+            <p class="top5-card__fit">★★★★★</p>
+            <p class="top5-card__rate">700 – 1.000 €/Tag + Reise</p>
+            <a href="https://katjabaum-foodstyling.com" target="_blank" class="top5-card__link">katjabaum-foodstyling.com</a>
+          </div>
+          <div class="top5-card js-top5-card">
+            <span class="top5-card__rank">04</span>
+            <p class="top5-card__name">Nadine Page</p>
+            <p class="top5-card__city">Berlin / New York</p>
+            <p class="top5-card__why">Pret a Manger + HelloFresh. Fast-Casual und Delivery-Erfahrung. Internationaler, moderner Stil.</p>
+            <p class="top5-card__fit">★★★★☆</p>
+            <p class="top5-card__rate">900 – 1.400 €/Tag</p>
+            <a href="https://nadinepage.com" target="_blank" class="top5-card__link">nadinepage.com</a>
+          </div>
+          <div class="top5-card js-top5-card">
+            <span class="top5-card__rank">05</span>
+            <p class="top5-card__name">Rainer Meidinger</p>
+            <p class="top5-card__city">Hamburg (reist)</p>
+            <p class="top5-card__why">Burger King im Portfolio. Technisch stärkster Fast-Food-Spezialist. Reist bundesweit nach Berlin.</p>
+            <p class="top5-card__fit">★★★★☆</p>
+            <p class="top5-card__rate">700 – 1.000 €/Tag + Reise</p>
+            <a href="https://styling-food.de" target="_blank" class="top5-card__link">styling-food.de</a>
+          </div>
+        </div>
+
+        <!-- FULL TABLE -->
+        <div class="shortlist__table-section-label">
+          <span>Vollständige Recherche — 21 Kandidaten</span>
+        </div>
+
+        <div class="shortlist__table-wrap">
+          <table class="shortlist__table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Standort</th>
+                <th>Spezialisierung</th>
+                <th>Bekannte Kunden</th>
+                <th>Tagesrate (Schätzung)</th>
+                <th>Mmaah-Fit</th>
+                <th>Kontakt</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- TIER 1 -->
+              <tr class="tier-sep-row">
+                <td colspan="8">Tier 1 — Senior · Berlin-basiert · Werbeerfahrung</td>
+              </tr>
+
+              <tr class="tier-1-accent">
+                <td>1</td>
+                <td class="td-name">Stefan Dangeleit<span class="tier-badge tier-badge--1">★★★</span><small>@miet_mein_messer</small></td>
+                <td>Berlin</td>
+                <td>Food &amp; Drink Styling, TVC, Print, Fast Food, Special Effects</td>
+                <td>McDonald's, Pizza Hut, HelloFresh, Lidl, Coca-Cola, Nestlé</td>
+                <td class="td-rate">700 – 1.000 €</td>
+                <td class="td-fit">★★★★★</td>
+                <td><a href="https://foodstylingdangeleit.com" target="_blank" class="td-link">foodstylingdangeleit.com</a><span class="td-link">foodstylingdangeleit@gmail.com</span></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td class="td-name">Max Faber — FoodFaber<span class="tier-badge tier-badge--1">★★★</span><small>@foodfaber</small></td>
+                <td>Berlin</td>
+                <td>Food &amp; Drink Styling, Print, Film, TV, Fastfood-Styling, Scanography</td>
+                <td>Aldi Süd, Edeka, Rewe, Lidl, Coca-Cola, Lindt, Philadelphia</td>
+                <td class="td-rate">800 – 1.200 €</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://foodfaber.com" target="_blank" class="td-link">foodfaber.com</a><span class="td-link">kontakt@foodfaber.com</span></td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td class="td-name">Martin Kühnel<span class="tier-badge tier-badge--1">★★★</span><small>@foodstylingkuehnel</small></td>
+                <td>Berlin</td>
+                <td>Food &amp; Drink Styling, TVC, Liquid Motion Development</td>
+                <td>Hochland, Mövenpick, Herta, Dr. Oetker, Aldi, Netto</td>
+                <td class="td-rate">800 – 1.200 €</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://foodstylingkuehnel.com" target="_blank" class="td-link">foodstylingkuehnel.com</a><span class="td-link">info@foodstylingkuehnel.com</span></td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td class="td-name">Natasha Van Velzen<span class="tier-badge tier-badge--1">★★★</span><small>@natashavanvelzen</small></td>
+                <td>Berlin</td>
+                <td>Food &amp; Drink Styling, TVC, Editorial, Liquid &amp; Coffee Styling</td>
+                <td>Siemens, Starbucks, Aldi, Uber Eats</td>
+                <td class="td-rate">900 – 1.400 €</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://natashavanvelzen.de" target="_blank" class="td-link">natashavanvelzen.de</a><span class="td-link">Über Website-Formular</span></td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td class="td-name">Haniyeh Nikoo<span class="tier-badge tier-badge--1">★★★</span><small>@haniyeh.nikoo · 60K</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, Photography, Videography, Art Direction, Asiatische Küche</td>
+                <td>HelloFresh, Empress Gin, Kiri Cheese, Amuerte Gin</td>
+                <td class="td-rate">600 – 900 €</td>
+                <td class="td-fit" style="color:#F4C44A;">★★★★★</td>
+                <td><a href="https://haniyehnikoo.com" target="_blank" class="td-link">haniyehnikoo.com</a><span class="td-link">Über Website</span></td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td class="td-name">Nadine Page<span class="tier-badge tier-badge--1">★★★</span><small>@nadinepage1</small></td>
+                <td>Berlin / New York</td>
+                <td>Food &amp; Prop Styling, Print, Digital, Video, Commercial</td>
+                <td>Whole Foods, Pret a Manger, HelloFresh, Braun, Skyy Vodka</td>
+                <td class="td-rate">900 – 1.400 €</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://nadinepage.com" target="_blank" class="td-link">nadinepage.com</a><span class="td-link">nadine.p.beauchamp@gmail.com</span></td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td class="td-name">Lukas Grossmann<span class="tier-badge tier-badge--1">★★★</span><small>@foodstyling.lukasgrossmann</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, Rezeptentwicklung, Culinary Consulting</td>
+                <td>Rewe, Aldi, HelloFresh, Gruner &amp; Jahr, Zeit Magazin, WMF</td>
+                <td class="td-rate">700 – 1.000 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://lukasgrossmann.de" target="_blank" class="td-link">lukasgrossmann.de</a><span class="td-link">info@lukasgrossmann.de</span></td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td class="td-name">Anke Rabeler<span class="tier-badge tier-badge--1">★★★</span><small>via Agentur Rautenberg</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, Rezeptentwicklung, FMCG-Schwerpunkt</td>
+                <td>Aldi Nord, Bahlsen, Dr. Oetker, Edeka, Iglo, Knorr, Rewe, Tchibo</td>
+                <td class="td-rate">900 – 1.300 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://ankerabeler.de" target="_blank" class="td-link">ankerabeler.de</a><span class="td-link">mail@agentur-rautenberg.de</span></td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td class="td-name">Karsten von Kuczkowski<span class="tier-badge tier-badge--1">★★★</span><small>@dvonkstylisten · via Basics Berlin</small></td>
+                <td>Berlin</td>
+                <td>Food &amp; Still Life Styling, Set Design, Storytelling-Komposition</td>
+                <td>AEG, Galeries Lafayette, Metro, Herta, Ritter Sport, Veuve Clicquot</td>
+                <td class="td-rate">900 – 1.400 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://basics.berlin" target="_blank" class="td-link">basics.berlin</a><span class="td-link">mail@basics.berlin</span></td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td class="td-name">Urs Hug<span class="tier-badge tier-badge--1">★★★</span><small>@foodstyling.brlin</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, TV, Verlage, Werbung, Print</td>
+                <td>BR Bayern, diverse Buchprojekte</td>
+                <td class="td-rate">600 – 900 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://kochurs.de" target="_blank" class="td-link">kochurs.de</a><span class="td-link">info@kochurs.de</span></td>
+              </tr>
+
+              <!-- TIER 2 -->
+              <tr class="tier-sep-row">
+                <td colspan="8">Tier 2 — Mid-Senior · Berlin-basiert oder reisebereit</td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+                <td class="td-name">Markus Bongardt<span class="tier-badge tier-badge--2">★★</span><small>@studio_bongardt</small></td>
+                <td>Berlin / Hamburg</td>
+                <td>Food Styling, Fashion Styling, Still Life, Vegan-Fokus</td>
+                <td>Rewe, Victorinox</td>
+                <td class="td-rate">600 – 900 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://studiobongardt.com" target="_blank" class="td-link">studiobongardt.com</a><span class="td-link">Über Website-Formular</span></td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+                <td class="td-name">Candy Lexa<span class="tier-badge tier-badge--2">★★</span><small>@candylexa</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, Recipe Development, Packaging, TVC, Print</td>
+                <td>Nicht öffentlich — Portfolio zeigt Packaging-Schwerpunkt</td>
+                <td class="td-rate">500 – 800 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://candylexa.com" target="_blank" class="td-link">candylexa.com</a><span class="td-link">candy.c.lexa@gmail.com</span></td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+                <td class="td-name">Henriette Wulff<span class="tier-badge tier-badge--2">★★</span><small>@henriette.wulff</small></td>
+                <td>Berlin</td>
+                <td>Food Styling, Photography (mit Toby Wulff), Art Direction</td>
+                <td>TASTE AWARDS LA Auszeichnung, Pink Lady Finalistin 2020</td>
+                <td class="td-rate">600 – 900 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://henriettewulff.de/foodstyling" target="_blank" class="td-link">henriettewulff.de</a><span class="td-link">Über Website-Formular</span></td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+                <td class="td-name">Magdalena Lindstedt<span class="tier-badge tier-badge--2">★★</span><small>via Stillstars</small></td>
+                <td>Berlin</td>
+                <td>Interior Styling, Prop Styling, Set Design, Food im Arrangement</td>
+                <td>DoorDash, Wayfair, Merme, Juniqe, Arzberg, Urbanara</td>
+                <td class="td-rate">700 – 1.000 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://stillstars.com" target="_blank" class="td-link">stillstars.com</a><span class="td-link">ml@stillstars.com</span></td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+                <td class="td-name">Sandra Schumann<span class="tier-badge tier-badge--2">★★</span></td>
+                <td>Berlin / Paris</td>
+                <td>Food Styling, Autorin, Rezeptentwicklung, Print, Editorial</td>
+                <td>Tagesspiegel, Callwey-Verlag, diverse Verlage</td>
+                <td class="td-rate">700 – 1.000 €</td>
+                <td class="td-fit">★★☆☆☆</td>
+                <td><a href="https://sandraschumann.com" target="_blank" class="td-link">sandraschumann.com</a><span class="td-link">Über Website</span></td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+                <td class="td-name">Ben Donath — Eatery Berlin<span class="tier-badge tier-badge--2">★★</span><small>@eateryberlin</small></td>
+                <td>Berlin</td>
+                <td>Natural Food Styling, Recipe Creation, Food Photography &amp; Video</td>
+                <td>Nicht öffentlich gelistet</td>
+                <td class="td-rate">500 – 800 €</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://eateryberlin.com" target="_blank" class="td-link">eateryberlin.com</a><span class="td-link">+49 176 630 54 781</span></td>
+              </tr>
+
+              <!-- TIER 3 -->
+              <tr class="tier-sep-row">
+                <td colspan="8">Tier 3 — Andere Städte · reisen nach Berlin · Reisekosten extra</td>
+              </tr>
+
+              <tr>
+                <td>17</td>
+                <td class="td-name">Lukas Baseda<span class="tier-badge tier-badge--3">reist</span><small>Hamburg</small></td>
+                <td>Hamburg</td>
+                <td>Food Styling, Liquid Styling, Rezeptentwicklung, Packaging</td>
+                <td>Arla, Harry, Ankerkraut, Appel, Bauck</td>
+                <td class="td-rate">700 – 1.000 €<br>+ Reise</td>
+                <td class="td-fit">★★★☆☆</td>
+                <td><a href="https://basedafood.de" target="_blank" class="td-link">basedafood.de</a><span class="td-link">lukas@baseda.de</span></td>
+              </tr>
+
+              <tr>
+                <td>18</td>
+                <td class="td-name">Thomas Lauterbach<span class="tier-badge tier-badge--3">reist</span><small>@lauterbachfood__h · Hamburg</small></td>
+                <td>Hamburg</td>
+                <td>Food Styling für Foto &amp; Film, Kochbücher, Packaging, Social Media</td>
+                <td>Buchverlage, Werbeagenturen bundesweit</td>
+                <td class="td-rate">800 – 1.200 €<br>+ Reise</td>
+                <td class="td-fit">★★☆☆☆</td>
+                <td><a href="https://lauterbachfood.de" target="_blank" class="td-link">lauterbachfood.de</a><span class="td-link">mail@lauterbachfood.de</span></td>
+              </tr>
+
+              <tr>
+                <td>19</td>
+                <td class="td-name">Rainer Meidinger<span class="tier-badge tier-badge--3">reist</span><small>Seevetal / Hamburg</small></td>
+                <td>Hamburg-Region</td>
+                <td>Food Styling für Werbung, Fast Food, FMCG, Burger &amp; Sandwiches, Grill</td>
+                <td>Burger King, Coca-Cola, Aldi, Iglo, Frosta, Dr. Oetker, Knorr, Maggi, Rewe</td>
+                <td class="td-rate">700 – 1.000 €<br>+ Reise</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://styling-food.de" target="_blank" class="td-link">styling-food.de</a><span class="td-link">meidinger@styling-food.de</span></td>
+              </tr>
+
+              <tr>
+                <td>20</td>
+                <td class="td-name">Katja Baum<span class="tier-badge tier-badge--3">reist</span><small>@katja_baum.foodstyling · via Stillstars</small></td>
+                <td>Hamburg</td>
+                <td>Food Styling, Sushi, Süßwaren, Drinks, Werbung</td>
+                <td>Eat Happy, Yuzu Sushi, Iglo, Slowly Veggie, dm Bio</td>
+                <td class="td-rate">700 – 1.000 €<br>+ Reise</td>
+                <td class="td-fit" style="color:#F4C44A;">★★★★★</td>
+                <td><a href="https://katjabaum-foodstyling.com" target="_blank" class="td-link">katjabaum-foodstyling.com</a><span class="td-link">kb@stillstars.com</span></td>
+              </tr>
+
+              <tr>
+                <td>21</td>
+                <td class="td-name">Tim Landsberg<span class="tier-badge tier-badge--3">reist</span><small>@foodstyling_tim_landsberg · Bayern</small></td>
+                <td>Bayern</td>
+                <td>Food Styling für Werbung, Burger &amp; Sandwiches, Poster, TVC, Kino, Packaging</td>
+                <td>McDonald's, Edeka, Bosch, Siemens, Hipp</td>
+                <td class="td-rate">800 – 1.200 €<br>+ Reise</td>
+                <td class="td-fit">★★★★☆</td>
+                <td><a href="https://foodstyling-landsberg.de" target="_blank" class="td-link">foodstyling-landsberg.de</a><span class="td-link">Über Website-Formular</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <p class="shortlist__note">
+          Alle Preise sind Schätzwerte basierend auf Erfahrungsgrad und DE-Marktstandard 2026.
+          Genaue Konditionen auf direkter Anfrage. Reisekosten für Tier-3-Kandidaten separat verhandeln.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         11 · FEATURE IMAGE
+         Foodshots/image18 copy — Two people sharing fried chicken box.
+         Closing lifestyle beat before the Outro.
+    =========================================== -->
+    <section class="section-feature">
+      <div class="feature__wrap">
+        <img class="feature__img js-parallax-img"
+          src="03_Moodboard/Foodshots/image18%20copy.jpg"
+          alt="Sharing — Mmaah Experience"
+          loading="lazy">
+        <div class="feature__overlay">
+          <p class="feature__overlay-text">
+            "Das beste Essen ist das, das man teilt."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         12 · OUTRO
+    =========================================== -->
+    <section class="section-outro" id="outro">
+      <div class="container">
+        <div class="outro__inner">
+          <span class="outro__line js-outro-line">Mmaah</span>
+          <span class="outro__line is-accent js-outro-line">macht Hunger.</span>
+          <span class="outro__line js-outro-line">Wir machen</span>
+          <span class="outro__line is-accent js-outro-line">die Bilder dazu.</span>
+          <div class="outro__meta js-outro-meta">
+            <span>Photoshooting 2026</span>
+            <span>Directors Treatment</span>
+            <span>Mmaah Korean Food</span>
+            <span>Berlin</span>
+          </div>
+        </div>
+        <div class="outro__bg-char" aria-hidden="true">맛</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.remove('is-loading');
+    });
+
+    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* PROGRESS BAR */
+    gsap.to('.js-progress', {
+      scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: true }
+    });
+
+    /* HEADER */
+    window.addEventListener('scroll', () => {
+      document.querySelector('.js-header')
+        .classList.toggle('is-scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    if (!noMotion) {
+
+      /* HERO — page load */
+      const heroTl = gsap.timeline({ delay: 0.15 });
+      heroTl
+        .from('.hero__eyebrow',  { opacity: 0, y: 20, duration: 0.65, ease: 'power2.out' })
+        .from('.js-hero-line',   { opacity: 0, y: 75, duration: 0.95, stagger: 0.12, ease: 'power3.out' }, '-=0.3')
+        .from('.js-hero-sub',    { opacity: 0, y: 22, duration: 0.7,  ease: 'power2.out' }, '-=0.45')
+        .from('.js-hero-cue',    { opacity: 0, duration: 0.5 }, '-=0.2')
+        .from('.hero__bg-char',  { opacity: 0, scale: 1.08, duration: 1.6, ease: 'power2.out' }, 0.1);
+
+      /* PARALLAX — images */
+      gsap.utils.toArray('.js-parallax-img').forEach(img => {
+        gsap.to(img, {
+          yPercent: 9, ease: 'none',
+          scrollTrigger: {
+            trigger: img.closest('figure, div, section') || img.parentElement,
+            start: 'top bottom', end: 'bottom top', scrub: true
+          }
+        });
+      });
+
+      /* VISION */
+      gsap.from('.vision__text-col > *', {
+        scrollTrigger: { trigger: '.section-vision', start: 'top 75%', once: true },
+        opacity: 0, x: -45, duration: 0.85, stagger: 0.13, ease: 'power2.out'
+      });
+      gsap.from('.vision__image-wrap', {
+        scrollTrigger: { trigger: '.section-vision', start: 'top 75%', once: true },
+        opacity: 0, x: 55, duration: 1.1, ease: 'power2.out'
+      });
+
+      /* LIGHTING CARDS */
+      gsap.from('.js-card', {
+        scrollTrigger: { trigger: '.lighting__trio', start: 'top 72%', once: true },
+        opacity: 0, y: 55, duration: 0.75, stagger: 0.14, ease: 'power2.out'
+      });
+      gsap.from('.lighting__principle', {
+        scrollTrigger: { trigger: '.lighting__principle', start: 'top 80%', once: true },
+        opacity: 0, y: 40, duration: 0.9, ease: 'power2.out'
+      });
+
+      /* FADE-UP generic */
+      gsap.utils.toArray('.js-fade-up').forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+          opacity: 0, y: 40, duration: 0.95, ease: 'power2.out'
+        });
+      });
+
+      /* CLOSE-UPS stagger */
+      gsap.utils.toArray('.js-closeup').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+          opacity: 0, y: i % 2 === 0 ? 60 : 40,
+          duration: 0.85, ease: 'power2.out'
+        });
+      });
+
+      /* SHOWCASE ITEMS */
+      gsap.utils.toArray('.js-showcase').forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 82%', once: true },
+          opacity: 0, y: 70, duration: 1.05, ease: 'power3.out'
+        });
+      });
+
+      /* TABLE TRIO */
+      gsap.utils.toArray('.table__trio-item').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+          opacity: 0, y: 30, duration: 0.75, delay: i * 0.1, ease: 'power2.out'
+        });
+      });
+      gsap.utils.toArray('.table__detail').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+          opacity: 0, y: 25, duration: 0.7, delay: i * 0.1, ease: 'power2.out'
+        });
+      });
+
+      /* BRAND FOTOS */
+      gsap.utils.toArray('.js-brand-foto').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 92%', once: true },
+          opacity: 0, y: 35, scale: 0.97,
+          duration: 0.75, delay: i * 0.06, ease: 'power2.out'
+        });
+      });
+
+      /* LIFESTYLE DUO */
+      gsap.from('.js-lifestyle-item', {
+        scrollTrigger: { trigger: '.lifestyle__duo', start: 'top 80%', once: true },
+        opacity: 0, scale: 1.04, duration: 1.0,
+        stagger: 0.15, ease: 'power2.out'
+      });
+
+      /* SHOT GUIDE CARDS */
+      gsap.from('.js-cat-card', {
+        scrollTrigger: { trigger: '.categories__grid', start: 'top 76%', once: true },
+        opacity: 0, y: 50, scale: 0.97,
+        duration: 0.75, stagger: 0.1, ease: 'power2.out'
+      });
+
+      /* OUTPUT LIST */
+      gsap.from('.js-output-item', {
+        scrollTrigger: { trigger: '.output__list', start: 'top 76%', once: true },
+        opacity: 0, x: -35,
+        duration: 0.55, stagger: 0.08, ease: 'power2.out'
+      });
+
+      /* SHORTLIST TOP 5 CARDS */
+      gsap.utils.toArray('.js-top5-card').forEach((el, i) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+          opacity: 0, y: 40, duration: 0.7, delay: i * 0.1, ease: 'power2.out'
+        });
+      });
+
+      /* FEATURE IMAGE */
+      gsap.from('.feature__overlay-text', {
+        scrollTrigger: { trigger: '.section-feature', start: 'top 70%', once: true },
+        opacity: 0, y: 30, duration: 1.0, ease: 'power2.out'
+      });
+
+      /* OUTRO */
+      const outroTl = gsap.timeline({
+        scrollTrigger: { trigger: '.section-outro', start: 'top 65%', once: true }
+      });
+      outroTl
+        .from('.js-outro-line',  { opacity: 0, y: 75, duration: 1.05, stagger: 0.18, ease: 'power3.out' })
+        .from('.js-outro-meta',  { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+        .from('.outro__bg-char', { opacity: 0, scale: 0.85, duration: 1.6, ease: 'power2.out' }, 0.2);
+    }
+
+    /* TABS */
+    document.querySelectorAll('.js-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = tab.dataset.tab;
+        document.querySelectorAll('.js-tab').forEach(t => t.classList.remove('is-active'));
+        document.querySelectorAll('.food-panel').forEach(p => p.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        document.getElementById('panel-' + id).classList.add('is-active');
+        if (!noMotion) {
+          gsap.from('#panel-' + id + ' .food-item', {
+            opacity: 0, y: 25, duration: 0.45, stagger: 0.07, ease: 'power2.out'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
